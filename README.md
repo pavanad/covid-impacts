@@ -1,7 +1,7 @@
 
 # COVID-19 Impacts Bot
 
-# MACOS
+## MacOS
 
 ```bash
 export PATH=$PATH:/usr/local/mysql-8.0.17-macos10.14-x86_64/bin
