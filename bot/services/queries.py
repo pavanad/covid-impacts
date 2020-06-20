@@ -2,7 +2,7 @@
 
 from dotenv import load_dotenv
 
-from ..interfaces.database_interface import DataBaseInterface
+from interfaces.database_interface import DataBaseInterface
 
 load_dotenv()
 

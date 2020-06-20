@@ -4,8 +4,8 @@ import logging
 
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 
-from .config.settings import TELEGRAM_TOKEN
-from .services.queries import (
+from config.settings import TELEGRAM_TOKEN
+from services.queries import (
     get_city_data,
     get_economic_data,
     get_predict_data,
@@ -29,8 +29,8 @@ def start(update, context):
 
 
 def get_city(update, context, args):
-    try:
-        city = args[0]
+    try:        
+        city = " ".join(args)        
         data = get_city_data(city)
         message = "Desculpe não localizei a cidade que vc digitou!"
         if len(data):
@@ -52,7 +52,7 @@ def get_city(update, context, args):
 
 
 def get_state(update, context, args):
-    try:
+    try:        
         state = args[0]
         data = get_state_data(state)
         message = "Desculpe não localizei a estado que vc digitou!"
