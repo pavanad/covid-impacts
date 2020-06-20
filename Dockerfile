@@ -9,4 +9,4 @@ COPY ./bot/requirements.txt /etc
 RUN pip install pip --upgrade
 RUN pip install -r /etc/requirements.txt
 
-CMD python -m bot
+CMD python bot
