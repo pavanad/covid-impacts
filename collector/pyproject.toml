@@ -6,6 +6,8 @@ authors = ["Adilson Pavan <adilson.pavan@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+requests = "^2.24.0"
+pandas = "^1.0.5"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
