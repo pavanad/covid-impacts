@@ -11,10 +11,9 @@ from .sources import COVID, ECONOMIC
 
 class ExtractService:
     def __init__(self):
-        self._datasets = {}
-        self._covid_urls = COVID
-        self._economic_urls = ECONOMIC
-
+        self.__datasets = {}
+        self.__covid_urls = COVID
+        self.__economic_urls = ECONOMIC
         self.__header = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) "
             "AppleWebKit/537.11 (KHTML, like Gecko) "
@@ -22,7 +21,7 @@ class ExtractService:
 
     @property
     def datasets(self):
-        return self._datasets
+        return self.__datasets
 
     def __make_requests(self, url: str) -> pd.DataFrame:
         df_content = pd.DataFrame()
@@ -37,10 +36,10 @@ class ExtractService:
         return df_content
 
     def __fetch_datasets(self):
-        sources = self._covid_urls.copy()
-        sources.update(self._economic_urls)
+        sources = self.__covid_urls.copy()
+        sources.update(self.__economic_urls)
         for key, url in sources.items():
-            self._datasets[key] = self.__make_requests(url)
+            self.__datasets[key] = self.__make_requests(url)
 
     def execute(self):
         self.__fetch_datasets()
