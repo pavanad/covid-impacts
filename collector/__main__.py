@@ -17,6 +17,7 @@ def main():
 
     timelapse = timeit.default_timer() - start
     print(f"timelapse: {timelapse}")
-    
+
+
 if __name__ == "__main__":
     main()
